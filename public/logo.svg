@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
+  <title id="title">Al Amanah Store Logo</title>
+  <desc id="desc">Stylized green emblem for Al Amanah Store</desc>
+  <rect width="180" height="180" rx="24" fill="#0f8a4a"/>
+  <path d="M30 125c18-50 40-74 60-74s42 24 60 74h-20c-12-32-26-48-40-48s-28 16-40 48H30z" fill="#fff"/>
+  <circle cx="90" cy="48" r="14" fill="#fff"/>
+</svg>
