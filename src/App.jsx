@@ -45,6 +45,11 @@ const slugify = (value) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
 
+const normalizeImage = (value) => {
+  if (!value) return '/logo.svg'
+  return /^\/[a-zA-Z0-9/_-]+\.(svg|png|jpg|jpeg|webp)$/i.test(value) ? value : '/logo.svg'
+}
+
 const encode = (data) =>
   Object.entries(data)
     .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
@@ -63,6 +68,7 @@ function App() {
 
   const [adminPassword, setAdminPassword] = useState('')
   const [isAdmin, setIsAdmin] = useState(localStorage.getItem(STORAGE.admin) === 'true')
+  const [adminMessage, setAdminMessage] = useState('')
   const [productForm, setProductForm] = useState(defaultProduct)
   const [bannerForm, setBannerForm] = useState(defaultBanner)
 
@@ -187,8 +193,9 @@ function App() {
       setIsAdmin(true)
       localStorage.setItem(STORAGE.admin, 'true')
       setAdminPassword('')
+      setAdminMessage('')
     } else {
-      setCheckoutMessage('Incorrect admin password.')
+      setAdminMessage('Incorrect admin password.')
     }
   }
 
@@ -201,7 +208,7 @@ function App() {
       price: Number(productForm.price),
       stock: Number(productForm.stock),
       featured: Boolean(productForm.featured),
-      image: productForm.image || '/logo.svg',
+      image: normalizeImage(productForm.image),
     }
 
     setProducts((prev) => {
@@ -322,7 +329,7 @@ function App() {
       <div className="grid">
         {filteredProducts.map((product) => (
           <article key={product.id} className="card">
-            <img src={product.image} alt={product.name} />
+            <img src={normalizeImage(product.image)} alt={product.name} />
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <p className="meta">Stock: {product.stock}</p>
@@ -440,7 +447,7 @@ function App() {
           Back to home
         </button>
         <article className="card detail">
-          <img src={selectedProduct.image} alt={selectedProduct.name} />
+          <img src={normalizeImage(selectedProduct.image)} alt={selectedProduct.name} />
           <h2>{selectedProduct.name}</h2>
           <p>{selectedProduct.description}</p>
           <p className="meta">Available stock: {selectedProduct.stock}</p>
@@ -514,6 +521,7 @@ function App() {
             </label>
             <button type="submit">Login</button>
           </form>
+          {adminMessage ? <p className="notice">{adminMessage}</p> : null}
         </section>
       )
     }
