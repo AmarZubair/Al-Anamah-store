@@ -1,0 +1,42 @@
+[
+  {
+    "id": "talbeena-classic",
+    "name": "Takmeeli Talbeena Classic",
+    "category": "Talbeena",
+    "price": 18.5,
+    "stock": 120,
+    "image": "/logo.svg",
+    "description": "Traditional barley-based Talbeena mix for daily wellness and nutrition.",
+    "featured": true
+  },
+  {
+    "id": "talbeena-date",
+    "name": "Takmeeli Talbeena Date Blend",
+    "category": "Talbeena",
+    "price": 21,
+    "stock": 90,
+    "image": "/logo.svg",
+    "description": "Talbeena enriched with natural date powder for a rich and mild sweetness.",
+    "featured": true
+  },
+  {
+    "id": "talbeena-saffron",
+    "name": "Takmeeli Talbeena Saffron",
+    "category": "Talbeena",
+    "price": 24,
+    "stock": 60,
+    "image": "/logo.svg",
+    "description": "Premium Talbeena with saffron aroma, ideal for special servings.",
+    "featured": false
+  },
+  {
+    "id": "amanah-honey",
+    "name": "Al Amanah Pure Honey",
+    "category": "Store Essentials",
+    "price": 15,
+    "stock": 75,
+    "image": "/logo.svg",
+    "description": "Natural honey sourced for pairing with Talbeena and healthy recipes.",
+    "featured": false
+  }
+]

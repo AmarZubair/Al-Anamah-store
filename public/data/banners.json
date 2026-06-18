@@ -1,0 +1,14 @@
+[
+  {
+    "id": "welcome-offer",
+    "title": "Welcome to Al Amanah Store",
+    "message": "Get 10% off on your first Talbeena order today.",
+    "active": true
+  },
+  {
+    "id": "free-delivery",
+    "title": "Free Delivery Offer",
+    "message": "Free local delivery on orders above 50.",
+    "active": true
+  }
+]
